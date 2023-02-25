@@ -41,6 +41,7 @@ in
     (nixGLWrap pkgs.alacritty)
     (nixGLWrap pkgs.tdesktop)
     (nixGLWrap pkgs.linphone)
+    (nixGLWrap pkgs.zoom-us)
     #...
 
     # test pkgs:
@@ -54,9 +55,13 @@ in
     #develop:
     mkpasswd
     git
+    jetbrains.pycharm-community
+    vscode
     neovim
     tree-sitter
     xclip
+    postman
+
 
     # files:
     ranger
@@ -73,16 +78,15 @@ in
     vlc
     kazam
     flameshot
-    mellowplayer
-    google-chrome
+    alsa-lib
 
     # stylesheet:
+    eww
     sassc
     libsForQt5.qt5ct
     libsForQt5.qtstyleplugin-kvantum
 
     # tiling wm
-    # gnomeExtensions.pop-shell
 
     # languages and builders:
     gcc
@@ -91,7 +95,6 @@ in
     nodePackages.typescript
     rustc
     cargo
-
   ];
 
   # gtk = {
