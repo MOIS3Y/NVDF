@@ -15,9 +15,13 @@
 
   outputs = { nixpkgs, home-manager, nixgl, hyprland, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      overlays = [ nixgl.overlay ];
+      # system = "x86_64-linux";
+      # pkgs = nixpkgs.legacyPackages.${system};
+
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        overlays = [ nixgl.overlay ];
+      };
     in {
       homeConfigurations.void = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -32,7 +36,11 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+        extraSpecialArgs = {
+          inherit nixgl;
+        };
       };
+      packages.x86_64-linux.nixgl = pkgs.nixgl.auto.nixGLDefault;
     };
 }
 
