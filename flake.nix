@@ -29,7 +29,8 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home.nix
+          ./home/stepan/workstation
+          # ./home.nix
           # hyprland.homeManagerModules.default
           # {wayland.windowManager.hyprland.enable = true;}
         ];
