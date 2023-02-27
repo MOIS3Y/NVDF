@@ -23,25 +23,22 @@
         overlays = [ nixgl.overlay ];
       };
     in {
-      homeConfigurations.void = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      homeConfigurations = {
+        void = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [
-          ./home/stepan/workstation
-          # ./home.nix
-          # hyprland.homeManagerModules.default
-          # {wayland.windowManager.hyprland.enable = true;}
-        ];
+          modules = [ ./home/stepan/workstation ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
-        extraSpecialArgs = {
-          inherit nixgl;
+          extraSpecialArgs = {
+            inherit nixgl;
+          };
         };
-      };
       packages.x86_64-linux.nixgl = pkgs.nixgl.auto.nixGLDefault;
+      };
     };
 }
 

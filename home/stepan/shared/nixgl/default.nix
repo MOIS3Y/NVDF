@@ -28,7 +28,7 @@ in
     pkgs.nixgl.auto.nixGLDefault
     (nixGLWrap pkgs.alacritty)
     # (nixGLWrap pkgs.tdesktop)
-    # (nixGLWrap pkgs.linphone)
+    (nixGLWrap pkgs.linphone)
     # (nixGLWrap pkgs.zoom-us)
     #...
   ];
