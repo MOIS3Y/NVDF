@@ -27,9 +27,9 @@ in
   home.packages = with pkgs; [
     pkgs.nixgl.auto.nixGLDefault
     (nixGLWrap pkgs.alacritty)
-    # (nixGLWrap pkgs.tdesktop)
+    (nixGLWrap pkgs.tdesktop)
     (nixGLWrap pkgs.linphone)
-    # (nixGLWrap pkgs.zoom-us)
+    (nixGLWrap pkgs.zoom-us)
     #...
   ];
 }
