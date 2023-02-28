@@ -10,7 +10,12 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, ... }:
+  outputs = { 
+    nixpkgs,
+    home-manager,
+    nixgl,
+    ... 
+    }:
     let
       # system = "x86_64-linux";
       # pkgs = nixpkgs.legacyPackages.${system};
@@ -21,10 +26,13 @@
       };
     in {
       homeConfigurations = {
-         workstation = home-manager.lib.homeManagerConfiguration {
+        # msi workstation:
+        workstation = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./home/stepan/workstation ];
           extraSpecialArgs = { inherit nixgl; };
+        # honor laptop:
+        #...
         };
       };
       packages.x86_64-linux.nixgl = pkgs.nixgl.auto.nixGLDefault;
