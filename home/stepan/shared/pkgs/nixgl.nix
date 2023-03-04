@@ -4,7 +4,6 @@
   config,
   ... 
 }:
-
 let
   # nixgl = import nixgl {} ;
   nixGLWrap = pkg: pkgs.runCommand "${pkg.name}-nixgl-wrapper" {} ''
@@ -18,9 +17,7 @@ let
      chmod +x $wrapped_bin
     done
   '';
-in 
-
-{
+in {
   home.packages = with pkgs; [
     pkgs.nixgl.auto.nixGLDefault
     (nixGLWrap pkgs.tdesktop)

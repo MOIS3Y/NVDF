@@ -4,6 +4,9 @@
   ...
 }: {
   home.packages = with pkgs; [
+    # window managers
+    qtile 
+
     # widgets:
     eww
 
@@ -21,4 +24,3 @@
       # executable = true;
     };
 }
-
