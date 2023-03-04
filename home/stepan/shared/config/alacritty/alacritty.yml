@@ -1,0 +1,105 @@
+################################################
+# ] ----- ALACRITTY GENERAL CONFIG FILE ----- [#
+################################################
+
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# Import additional configuration files
+#
+# Imports are loaded in order, skipping all missing files, with the importing
+# file being loaded last. If a field is already present in a previous import, it
+# will be replaced.
+#
+# All imports must either be absolute paths starting with `/`, or paths relative
+# to the user's home directory starting with `~/`.
+import:
+  - ~/.config/alacritty/cursor.yml
+  - ~/.config/alacritty/window.yml
+  - ~/.config/alacritty/font.yml
+  - ~/.config/alacritty/themes/catppuccin_mocha.yml
+  - ~/.config/alacritty/bell.yml
+  - ~/.config/alacritty/selection.yml
+  - ~/.config/alacritty/shell.yml
+  - ~/.config/alacritty/startup_dir.yml
+  - ~/.config/alacritty/key_bindings.yml
+
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  #TERM: alacritty
+  TERM: xterm-256color
+
+
+########################
+# ] ----- DEBUG ----- [#
+########################
+
+#debug:
+  # Display the time it takes to redraw each frame.
+  #render_timer: false
+
+  # Keep the log file after quitting Alacritty.
+  #persistent_logging: false
+
+  # Log level
+  #
+  # Values for `log_level`:
+  #   - Off
+  #   - Error
+  #   - Warn
+  #   - Info
+  #   - Debug
+  #   - Trace
+  #log_level: Warn
+
+  # Print all received window events.
+  #print_events: false
+
+  # Highlight window damage information.
+  #highlight_damage: false
+
+
+############################################
+# ] ----- IMPORT FROM PYWALL THEMES ----- [#
+############################################
+
+# Use a script to automatically change colors
+# if you haven't added a custom template for pywal
+# uncomment color params
+
+# SCRIPT AUTOCOMPLIT OPTIONS
+
+# BEGIN ACE
+#colors:
+#  primary:
+#    background: '#060806'
+#    foreground: '#c6d7c9'
+#  cursor:
+#    text:       '#060806'
+#    cursor:     '#c6d7c9'
+#  normal:
+#    black:      '#060806'
+#    red:        '#689779'
+#    green:      '#739E81'
+#    yellow:     '#7AA386'
+#    blue:       '#8DB095'
+#    magenta:    '#9DBBA1'
+#    cyan:       '#A2BDA4'
+#    white:      '#c6d7c9'
+#  bright:
+#    black:      '#8a968c'
+#    red:        '#689779'
+#    green:      '#739E81'
+#    yellow:     '#7AA386'
+#    blue:       '#8DB095'
+#    magenta:    '#9DBBA1'
+#    cyan:       '#A2BDA4'
+#    white:      '#c6d7c9'
+# END ACE

@@ -1,0 +1,11 @@
+#################################
+# ] ----- COLOR SETTINGS ----- [#
+#################################
+
+# available themes:
+	# catppucin_mocha
+	# one_dark
+
+import:
+  - ~/.config/alacritty/themes/catppuccin_mocha.yml
+

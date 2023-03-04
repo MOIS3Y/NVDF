@@ -9,14 +9,7 @@
     ./interface.nix
     ./media.nix
     ./nixgl.nix
+    ./shell.nix
     ./society.nix
   ];
 }
-    # society:
-    # mattermost-desktop
-
-
-    # media:
-    # vlc
-    # kazam
-    # flameshot

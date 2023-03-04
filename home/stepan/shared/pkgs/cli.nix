@@ -28,6 +28,8 @@
     cmatrix
     tty-clock
 
+
+    jq
     # ...
 
   ];
