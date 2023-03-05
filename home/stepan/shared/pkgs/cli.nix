@@ -10,6 +10,7 @@
     unrar
     
     # fs:
+    xfce.thunar
     ranger
     tree
     lsd
@@ -28,10 +29,10 @@
     cmatrix
     tty-clock
 
-
-    jq
+    # xserver
+    xkb-switch
+    
     # ...
 
   ];
 }
-

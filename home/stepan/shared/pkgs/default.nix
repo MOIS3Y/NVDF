@@ -11,5 +11,6 @@
     ./nixgl.nix
     ./shell.nix
     ./society.nix
+    ./xdg.nix
   ];
 }

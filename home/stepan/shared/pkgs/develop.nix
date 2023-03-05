@@ -18,10 +18,11 @@
     neovim
     
     # helpful utils:
+    git
+    jq
     tree-sitter
     xclip
     mkpasswd
     postman
   ];
 }
-

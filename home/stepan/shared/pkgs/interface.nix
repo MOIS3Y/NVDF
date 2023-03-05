@@ -12,10 +12,15 @@
 
     #window switcher
     rofi
+    rofi-bluetooth
 
     # QT5 styles:
     libsForQt5.qt5ct
     libsForQt5.qtstyleplugin-kvantum
+
+    # GTK styles:
+    lxappearance
+
   ];
   home.file.".config/rofi" = {
       source = ../config/rofi;

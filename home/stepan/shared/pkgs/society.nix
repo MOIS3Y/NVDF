@@ -5,6 +5,6 @@
 }: {
   home.packages = with pkgs; [
     mattermost-desktop
+    firefox
   ];
 }
-

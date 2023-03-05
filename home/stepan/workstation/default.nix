@@ -6,7 +6,9 @@
   imports = [
     # Shared configuration
     ../shared
+
     # Specific configuration
     ./services
+    ./desktop
   ];
 }
