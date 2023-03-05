@@ -31,7 +31,10 @@ with lib; let
     # "x-scheme-handler/tg" = ["telegramdesktop.desktop"];
   };
 in {
-  home.packages = [pkgs.xdg-utils];
+  home.packages = with pkgs;[
+		xdg-utils
+		xdg-desktop-portal-gtk
+	];
 
   xdg = {
     enable = true;
@@ -41,13 +44,6 @@ in {
       extraConfig = {
         XDG_DEVELOPMENT_DIR = "${config.xdg.userDirs.documents}/Dev";
       };
-    };
-
-    portal = {
-      enable = true;
-			extraPortals = [
-				"xdg-desktop-portal-gtk"
-			];
     };
 
     mimeApps = {
