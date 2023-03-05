@@ -33,7 +33,9 @@ with lib; let
 in {
   home.packages = with pkgs;[
 		xdg-utils
+    xdg-user-dirs
 		xdg-desktop-portal-gtk
+    xdg-ninja
 	];
 
   xdg = {
