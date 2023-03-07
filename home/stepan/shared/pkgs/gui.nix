@@ -11,9 +11,19 @@
     xfce.thunar
     gparted
 
-    #media:
+    # media:
     flameshot
     vlc
+
+    # network:
+    networkmanagerapplet
+    networkmanager-l2tp
+    networkmanager-openvpn
+    networkmanager_strongswan
+
+    gnome.networkmanager-openvpn
+    gnome.networkmanager-l2tp
+
 
     # sound:
     pulseaudioFull
@@ -35,9 +45,6 @@
     # QT5 styles:
     libsForQt5.qt5ct
     libsForQt5.qtstyleplugin-kvantum
-
-    # GTK styles:
-    lxappearance
     
     #....
 

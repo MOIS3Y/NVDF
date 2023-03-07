@@ -42,5 +42,10 @@
       name = "Tela-circle-dark";
       package = pkgs.tela-circle-icon-theme;
     };
-  }; 
+  };
+  # copy wallpapers: 
+  home.file."${config.xdg.dataHome}/wallpapers" = {
+      source = ../../shared/assets/wallpapers;
+      recursive = true;
+    };  
 }
