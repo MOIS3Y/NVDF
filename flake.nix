@@ -1,5 +1,11 @@
+# █▀▀ █░░ ▄▀█ █▄▀ █▀▀
+# █▀░ █▄▄ █▀█ █░█ ██▄
+
 {
-  description = "Home Manager configuration for my Void Linux workstation";
+  description = ''
+    Reproducible declarative configuration for my Linux systems.
+    Contains configuration as for NixOS and for Void Linux.
+  '';
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -17,21 +23,24 @@
     ... 
     }:
     let
-      # system = "x86_64-linux";
-      # pkgs = nixpkgs.legacyPackages.${system};
-
       pkgs = import nixpkgs {
         system = "x86_64-linux";
         overlays = [ nixgl.overlay ];
       };
     in {
       homeConfigurations = {
-        # msi workstation:
-        workstation = home-manager.lib.homeManagerConfiguration {
+        # Void Linux declarative pkgs config:
+        # --------------------------------------------------
+        VoidOS = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./home/stepan/workstation ];
+          modules = [ ./home/stepan/VoidOS ];
           extraSpecialArgs = { inherit nixgl; };
-        # honor laptop:
+
+        # NixOS Linux declarative pkgs config:
+        # --------------------------------------------------
+        # NixOS = home-manager.lib.homeManagerConfiguration {
+        #   inherit pkgs;
+        #   modules = [ ./home/stepan/NixOS ];
         #...
         };
       };

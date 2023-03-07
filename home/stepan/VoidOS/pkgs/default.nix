@@ -4,8 +4,7 @@
   ... 
 }:{
   imports = [
-    ./cli.nix
-    ./develop.nix
-    ./gui.nix
+    ./nixgl.nix
+    ./shell.nix
   ];
 }

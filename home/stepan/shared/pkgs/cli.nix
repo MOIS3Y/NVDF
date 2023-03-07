@@ -10,7 +10,6 @@
     unrar
     
     # fs:
-    xfce.thunar
     ranger
     tree
     lsd

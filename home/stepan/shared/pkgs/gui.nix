@@ -4,7 +4,25 @@
   ...
 }: {
   home.packages = with pkgs; [
-    # window managers
+    # browsers:
+    firefox
+    
+    # fs:
+    xfce.thunar
+    gparted
+
+    #media:
+    flameshot
+    vlc
+
+    # sound:
+    pulseaudioFull
+    pavucontrol
+
+    #society:
+    mattermost-desktop
+
+    # window managers:
     qtile 
 
     # widgets:
@@ -20,6 +38,8 @@
 
     # GTK styles:
     lxappearance
+    
+    #....
 
   ];
   home.file.".config/rofi" = {

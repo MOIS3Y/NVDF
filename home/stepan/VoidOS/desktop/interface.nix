@@ -3,17 +3,21 @@
   pkgs,
   ...
 }: {
+  # home.packages = with pkgs; [
+  #   catppuccin-kvantum
+  # ];
+
   home.pointerCursor = {
-    name = "Apple-Cursor";
-    package = pkgs.apple-cursor;
-    size = 32;
+    name = "Catppuccin-Mocha-Dark-Cursors";
+    package = pkgs.catppuccin-cursors.mochaDark;
+    size = 24;
     gtk.enable = true;
     x11.enable = true;
   };
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Standard-Dark";
+      name = "Catppuccin-Mocha-Standard-Blue-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ 
           "blue" 
@@ -35,7 +39,7 @@
       };
     };
     iconTheme = {
-      name = "Tela-Circle";
+      name = "Tela-circle-dark";
       package = pkgs.tela-circle-icon-theme;
     };
   }; 

@@ -1,3 +1,6 @@
+# █▄░█ █ ▀▄▀ █▀▀ █░░
+# █░▀█ █ █░█ █▄█ █▄▄
+
 {
   pkgs,
   lib,
@@ -26,12 +29,20 @@ in {
     #...
   ];
 
+
+# ▄▀█ █░░ ▄▀█ █▀▀ █▀█ █ ▀█▀ ▀█▀ █▄█
+# █▀█ █▄▄ █▀█ █▄▄ █▀▄ █ ░█░ ░█░ ░█░
+
   programs.alacritty = {
     package = (nixGLWrap pkgs.alacritty);
     enable = true;
     settings = {
       env = {
         TERM = "xterm-256color";
+      };
+      shell = {
+        program = "${lib.getExe pkgs.zsh.out}";
+        # args = ["--login"]
       };
       cursor.style = {
         shape = "Block";
@@ -123,6 +134,8 @@ in {
   };
 }
 
+# █ █▄░█ █▀▀ █▀█ ▀
+# █ █░▀█ █▀░ █▄█ ▄
 
 # ------------nixGL------------
 # URI: https://github.com/guibou/nixGL

@@ -16,6 +16,7 @@
     };
 
     sessionVariables = {
+      PATH = "/home/${config.home.username}/.local/bin:$PATH";
       NIXPKGS_ALLOW_UNFREE = 1;
       EDITOR = "nvim";
       VISUAL = "nvim";
