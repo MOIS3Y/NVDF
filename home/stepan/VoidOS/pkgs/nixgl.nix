@@ -23,6 +23,7 @@ let
 in {
   home.packages = with pkgs; [
     pkgs.nixgl.auto.nixGLDefault
+    (nixGLWrap pkgs.firefox)
     (nixGLWrap pkgs.tdesktop)
     (nixGLWrap pkgs.linphone)
     (nixGLWrap pkgs.zoom-us)

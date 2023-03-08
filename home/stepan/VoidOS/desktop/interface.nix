@@ -3,9 +3,22 @@
   pkgs,
   ...
 }: {
-  # home.packages = with pkgs; [
-  #   catppuccin-kvantum
-  # ];
+  home.packages = with pkgs; [
+    # widgets:
+    eww
+    
+    # window managers:
+    qtile 
+
+    #window switcher
+    rofi
+    rofi-bluetooth
+
+    # QT5 styles:
+    libsForQt5.qt5ct
+    libsForQt5.qtstyleplugin-kvantum
+
+  ];
 
   home.pointerCursor = {
     name = "Catppuccin-Mocha-Dark-Cursors";
@@ -47,5 +60,12 @@
   home.file."${config.xdg.dataHome}/wallpapers" = {
       source = ../../shared/assets/wallpapers;
       recursive = true;
-    };  
+  };  
+  # copy rofi row rasi config:
+  home.file.".config/rofi" = {
+      source = ../../shared/config/rofi;
+      recursive = true;
+      # onChange = builtins.readFile ../config/rofi/config.rasi;
+      # executable = true;
+  };
 }

@@ -1,0 +1,85 @@
+#!/usr/bin/env sh
+
+######################
+# ] ---- CONST ---- [#
+######################
+
+picture="ultraviolet.jpg"
+
+
+wal_path="$HOME/Pictures/Wallpapers/"
+wallpaper="$wal_path$picture"
+
+##########################
+# ] ---- AUTOSTART ---- [#
+##########################
+
+#
+
+# polkit for gui app
+exec /usr/libexec/polkit-mate-authentication-agent-1 &
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+picom --experimental-backends &
+
+feh --bg-scale "$wallpaper" &
+
+# pywal &  walpg
+#bash ~/.config/polybar/zebra/scripts/pywal.sh "$wallpaper" &
+wal -i "$wallpaper" -q -t &
+wpg -a "$wallpaper" &
+wpg -s "$picture" ;
+
+# alacritty change color schema
+cp ~/.cache/wal/colors-alacritty.yml ~/.config/alacritty/color.yml
+
+# polybar
+bash ~/.config/polybar/launch.sh --zebra &
+cp ~/.cache/wal/colors-polybar.ini ~/.config/polybar/zebra/colors.ini &
+
+# cava change color schema
+cp ~/.cache/wal/colors-cava.conf ~/.config/cava/config
+
+# mellow player change color schema
+cp ~/.cache/wal/colors-mellowplayer.conf ~/.config/MellowPlayer/MellowPlayer3.conf
+
+# Keyboard layout
+setxkbmap -option grp:alt_shift_toggle us,ru &
+
+# Applets
+
+#nm-applet &
+#blueman-applet &
+
+###########################
+# ] ---- WORKSPACES ---- [#
+###########################
+
+bspc monitor -d HOME WORK CHAT WEB CODE MEDIA RESERVE
+
+##############################
+# ] ---- WINDOW CONFIG ---- [#
+##############################
+
+bspc config window_gap           15
+bspc config border_width         0
+
+#bspc config border_width         3
+#bspc config normal_border_color "#2A2426"
+#bspc config focused_border_color "#87AF87"
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config focus_follows_pointer true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+# Remove x cursor
+xsetroot -cursor_name left_ptr &
