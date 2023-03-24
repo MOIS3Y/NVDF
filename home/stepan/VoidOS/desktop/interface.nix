@@ -4,11 +4,15 @@
   ...
 }: {
   home.packages = with pkgs; [
+    # images and wallpaper set:
+    feh
+    nitrogen
+
     # widgets:
     eww
     
     # window managers:
-    qtile 
+    # qtile 
 
     #window switcher
     rofi

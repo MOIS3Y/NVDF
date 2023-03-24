@@ -16,35 +16,42 @@
     };
   };
 
-  outputs = { 
+  outputs = {
+    self, 
     nixpkgs,
     home-manager,
     nixgl,
     ... 
-    }:
-    let
+  }:let
+      system = "x86_64-linux";
       pkgs = import nixpkgs {
-        system = "x86_64-linux";
+        inherit system;
         overlays = [ nixgl.overlay ];
       };
-    in {
-      homeConfigurations = {
-        # Void Linux declarative pkgs config:
-        # --------------------------------------------------
-        VoidOS = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./home/stepan/VoidOS ];
-          extraSpecialArgs = { inherit nixgl; };
-
-        # NixOS Linux declarative pkgs config:
-        # --------------------------------------------------
-        # NixOS = home-manager.lib.homeManagerConfiguration {
-        #   inherit pkgs;
-        #   modules = [ ./home/stepan/NixOS ];
-        #...
-        };
+    in
+  {
+    nixosConfigurations = {
+      # Laptop
+      honor-vlr-w09 = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/honor-vlr-w09];
       };
-      packages.x86_64-linux.nixgl = pkgs.nixgl.auto.nixGLDefault;
     };
-}
+    homeConfigurations = {
+      # Void Linux declarative pkgs config:
+      # --------------------------------------------------
+      VoidOS = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home/stepan/VoidOS ];
+        extraSpecialArgs = { inherit nixgl; };
 
+      # NixOS Linux declarative pkgs config:
+      # --------------------------------------------------
+      # NixOS = home-manager.lib.homeManagerConfiguration {
+      #   inherit pkgs;
+      #   modules = [ ./home/stepan/NixOS ];
+      #...
+      };
+    };
+    packages.x86_64-linux.nixgl = pkgs.nixgl.auto.nixGLDefault;
+  };
+}

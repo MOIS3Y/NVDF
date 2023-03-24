@@ -5,12 +5,13 @@
 }: {
   home.packages = with pkgs; [
     # languages and builders:
-    gcc
-    gnumake
-    nodejs
-    nodePackages.typescript
+    # gcc
+    # gnumake
+    # nodejs
+    # nodePackages.typescript
     rustc
     cargo
+    # poetry
    
     # IDE:
     jetbrains.pycharm-community
@@ -24,5 +25,7 @@
     xclip
     mkpasswd
     postman
+    colorpicker
+    inkscape
   ];
 }

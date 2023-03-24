@@ -89,10 +89,12 @@
         "window_type = 'utility'"
       ];
 
-      corner-radius = 22;
+      corner-radius = 16;
       rounded-corners-exclude = [
         "_PICOM_SHADOW@:32c = 0"
         "window_type = 'dock'"
+        "window_type = 'bar'"
+        "! name~=''"    # exclude windows with no name such as qtile's bar
         "_NET_WM_STATE@:32a *= '_NET_WM_STATE_MAXIMIZED_VERT'"
         "_NET_WM_STATE@:32a *= '_NET_WM_STATE_MAXIMIZED_HORZ'"
       ];
