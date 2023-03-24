@@ -1,6 +1,7 @@
 # █▀▀ █░░ ▄▀█ █▄▀ █▀▀
 # █▀░ █▄▄ █▀█ █░█ ██▄
-
+# https://github.com/MOIS3Y/NVDF
+# -------------------
 {
   description = ''
     Reproducible declarative configuration for my Linux systems.
@@ -31,7 +32,7 @@
     in
   {
     nixosConfigurations = {
-      # Laptop
+      # Laptop:
       honor-vlr-w09 = nixpkgs.lib.nixosSystem {
         modules = [./hosts/honor-vlr-w09];
       };
