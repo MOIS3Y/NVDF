@@ -7,9 +7,9 @@
   pkgs,
   ... 
 }: {
-  xdg.portal.extraPortals = [ 
-    pkgs.xdg-desktop-portal-gtk
-  ];
+  # xdg.portal.extraPortals = [ 
+  #   pkgs.xdg-desktop-portal-gtk
+  # ];
   imports = [
     ./cli.nix
     ./fonts.nix
