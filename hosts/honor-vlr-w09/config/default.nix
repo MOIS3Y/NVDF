@@ -7,12 +7,6 @@
   pkgs,
   ... 
 }: {
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
   config = {
     allowUnfree = true;
     pulseaudio = true;
