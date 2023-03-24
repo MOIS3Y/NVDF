@@ -28,12 +28,12 @@
         enable = true;
         autohint = true;
         style = "hintfull";
-        defaultFonts = {
-          serif = [ "DejaVu Serif" ];
-          sansSerif = [ "DejaVu Sans" ];
-          monospace = [ "DejaVu Sans Mono" ];
-          emoji = [ "Noto Color Emoji" ];
-        };
+      };
+      defaultFonts = {
+        serif = [ "DejaVu Serif" ];
+        sansSerif = [ "DejaVu Sans" ];
+        monospace = [ "DejaVu Sans Mono" ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };
