@@ -13,10 +13,10 @@
       experimental-features = nix-command flakes
     '';
   };
-  config = {
-    allowUnfree = true;
-    pulseaudio = true;
-  };
+  # config = {
+  #   allowUnfree = true;
+  #   pulseaudio = true;
+  # };
   imports = [
     ./boot.nix
     ./hardware.nix
