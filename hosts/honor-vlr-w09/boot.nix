@@ -33,7 +33,7 @@
       theme = pkgs.fetchzip {
         # https://github.com/AdisonCavani/distro-grub-themes
         url = https://github.com/AdisonCavani/distro-grub-themes/releases/download/v3.1/huawei.tar;
-        hash = "sha256-Ak1BMIEwFYGN/ME6nn+nBB1dWJmXN/iYUguVQIEZivA=";
+        hash = "sha256-aKMJZJO+PNSbPn9yrVfaaCD/tVZIAPuYYpCSG+zsg80";
         stripRoot = false;
       };
     };
