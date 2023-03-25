@@ -1,7 +1,6 @@
-# █▀▀ █▀█ █▄░█ █▀▀ █ █▀▀ █░█ █▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀ ▀
-# █▄▄ █▄█ █░▀█ █▀░ █ █▄█ █▄█ █▀▄ █▀█ ░█░ █ █▄█ █░▀█ ▄█ ▄
-# https://search.nixos.org/options
-# ------------------------------------------------------
+# █░█ █▀█ █▄░█ █▀█ █▀█ ▄▄ █░█ █░░ █▀█ ▄▄ █░█░█ █▀█ █▀█
+# █▀█ █▄█ █░▀█ █▄█ █▀▄ ░░ ▀▄▀ █▄▄ █▀▄ ░░ ▀▄▀▄▀ █▄█ ▀▀█
+# -----------------------------------------------------
 {
   config,
   pkgs,
@@ -13,22 +12,17 @@
       experimental-features = nix-command flakes
     '';
   };
-  # config = {
-  #   allowUnfree = true;
-  #   pulseaudio = true;
-  # };
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      pulseaudio = true;
+    };
+  };
   imports = [
-    ./boot.nix
-    ./hardware.nix
-    ./hardware-configuration.nix
-    ./locales.nix
-    ./networking.nix
-    ./users.nix
-
+    ./config
     ./pkgs
     ./services
   ];
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

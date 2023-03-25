@@ -8,7 +8,7 @@
 }: {
   fonts = {
     fonts = with pkgs; [
-      # nerdfonts
+      nerdfonts
       cantarell-fonts
       fira
       lato

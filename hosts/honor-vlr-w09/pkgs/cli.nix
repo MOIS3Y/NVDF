@@ -10,7 +10,6 @@
     # archives:
     zip
     unzip
-    unrar
     
     # fs:
     ranger
