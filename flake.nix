@@ -47,9 +47,9 @@
 
       # NixOS Linux declarative pkgs config:
       # --------------------------------------------------
-      # NixOS = home-manager.lib.homeManagerConfiguration {
-      #   inherit pkgs;
-      #   modules = [ ./home/stepan/NixOS ];
+      NixOS = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home/stepan/NixOS ];
       #...
       };
     };
