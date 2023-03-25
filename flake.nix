@@ -38,21 +38,15 @@
       };
     };
     homeConfigurations = {
-      # Void Linux declarative pkgs config:
-      # --------------------------------------------------
       VoidOS = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home/stepan/VoidOS ];
         extraSpecialArgs = { inherit nixgl; };
-
-      # NixOS Linux declarative pkgs config:
-      # --------------------------------------------------
+      };
       NixOS = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home/stepan/NixOS ];
-      #...
       };
-    };
     packages.x86_64-linux.nixgl = pkgs.nixgl.auto.nixGLDefault;
   };
 }
