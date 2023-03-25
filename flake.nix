@@ -48,5 +48,6 @@
         modules = [ ./home/stepan/NixOS ];
       };
     packages.x86_64-linux.nixgl = pkgs.nixgl.auto.nixGLDefault;
+    };
   };
 }
