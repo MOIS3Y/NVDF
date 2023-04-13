@@ -11,6 +11,7 @@
     nodePackages.typescript
     rustc
     cargo
+    python311
     poetry
    
     # IDE:
@@ -22,10 +23,5 @@
     git
     jq
     tree-sitter
-    xclip
-    mkpasswd
-    postman
-    colorpicker
-    inkscape
   ];
 }

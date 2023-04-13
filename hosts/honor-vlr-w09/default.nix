@@ -21,6 +21,7 @@
   imports = [
     ./config
     ./pkgs
+    ./programs
     ./services
   ];
   # This value determines the NixOS release from which the default

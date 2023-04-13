@@ -60,6 +60,21 @@
         title = "Alacritty";
         dynamic_title = false;
       };
+      font = {
+        size = 9;
+        normal = {
+          family = "Roboto Mono Nerd Font";
+          style = "Regular";
+        };
+        bold = {
+          family = "Roboto Mono Nerd Font";
+          style = "Bold";
+        };
+        italic = {
+          family = "Roboto Mono Nerd Font";
+          style = "Italic";
+        };
+      };
       colors = {
         primary = {
           background = "#1E1E2E";

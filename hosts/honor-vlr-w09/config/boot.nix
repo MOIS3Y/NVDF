@@ -32,6 +32,7 @@
       gfxmodeEfi = "1920x1080";
       theme = pkgs.fetchzip {
         # https://github.com/AdisonCavani/distro-grub-themes
+        name = "grub-theme-huawei";
         url = https://github.com/AdisonCavani/distro-grub-themes/releases/download/v3.1/huawei.tar;
         hash = "sha256-aKMJZJO+PNSbPn9yrVfaaCD/tVZIAPuYYpCSG+zsg80";
         stripRoot = false;

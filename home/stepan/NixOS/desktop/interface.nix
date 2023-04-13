@@ -14,11 +14,6 @@
     #window switcher
     rofi
     rofi-bluetooth
-
-    # QT5 styles:
-    libsForQt5.qt5ct
-    libsForQt5.qtstyleplugin-kvantum
-
   ];
 
   home.pointerCursor = {

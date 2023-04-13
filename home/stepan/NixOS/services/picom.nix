@@ -46,10 +46,14 @@
       "_PICOM_FADE@:32c = 0"
     ];
 
-    activeOpacity = 1.0;
-    inactiveOpacity = 1.0;
+    activeOpacity = 0.9;
+    inactiveOpacity = 0.7;
     menuOpacity = 1.0;
-    opacityRules = ["70:class_g = 'splash'"];
+    opacityRules = [
+      "70:class_g = 'splash'"
+      "100:class_g = 'Code'"
+      "100:class_g = 'Rofi'"
+    ];
 
     wintypes = {
       tooltip = {
@@ -71,8 +75,8 @@
       shadow-color = "#000000";
       shadow-ignore-shaped = false;
 
-      frame-opacity = 1.0;
-      inactive-opacity-override = false;
+      frame-opacity = 0.7;
+      inactive-opacity-override = true;
       focus-exclude = [
         "class_g = 'Cairo-clock'"
         "class_g = 'Peek'"
@@ -87,9 +91,10 @@
         "window_type = 'tooltip'"
         "window_type = 'unknown'"
         "window_type = 'utility'"
+        "! name~=''"    # exclude windows with no name such as qtile's bar
       ];
 
-      corner-radius = 16;
+      corner-radius = 6;
       rounded-corners-exclude = [
         "_PICOM_SHADOW@:32c = 0"
         "window_type = 'dock'"
@@ -121,7 +126,7 @@
       ];
 
       mark-wmwin-focused = true;
-      mark-ovredir-focused = true;
+      mark-ovredir-focused = false;  # fix inactive window bspwm, qtile
       detect-rounded-corners = true;
       detect-client-opacity = true;
       detect-transient = true;
